@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:tampilan/latihanpage.dart';
 import 'package:tampilan/latihanpage3.dart';
 
 class LatihanPage2 extends StatefulWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:tampilan/dana.dart';
 import 'package:tampilan/latihanpage.dart';
 import 'package:tampilan/latihanpage2.dart';
 import 'package:tampilan/latihanpage3.dart';
@@ -114,6 +115,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text("Halaman Latihan 3"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MyDana(),
+                  ),
+                );
+              },
+              child: const Text("Halaman Dana"),
             ),
             Text(
               '$_counter',
