@@ -62,6 +62,7 @@ class _MyDanaState extends State<MyDana> {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -126,14 +127,10 @@ class _MyDanaState extends State<MyDana> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                buildEighticon(Icons.account_balance,
-                                    "DANAPOLY", Colors.blue),
-                                buildEighticon(Icons.local_offer, "DANA Deals",
-                                    Colors.orange),
-                                buildEighticon(Icons.mobile_friendly,
-                                    "Pulsa & Data", Colors.red),
-                                buildEighticon(
-                                    Icons.star, "A+ Rewards", Colors.yellow),
+                                buildEighticon('images/phone-call.png', "Pulsa & Data", Colors.blue),
+                                buildEighticon('images/google-play.png', "Play Store", Colors.blue),
+                                buildEighticon('images/award.png', "A+ Reward", Colors.blue),
+                                buildEighticon('images/joystick.png', "Games", Colors.blue),
                               ],
                             ),
                           ),
@@ -141,14 +138,10 @@ class _MyDanaState extends State<MyDana> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                buildEighticon2(Icons.local_offer, "Voucher FF",
-                                    Color.fromARGB(255, 221, 134, 13)),
-                                buildEighticon2(Icons.account_balance,
-                                    "Google PZ", Colors.blue),
-                                buildEighticon2(
-                                    Icons.shop, "Tipu Online", Colors.orange),
-                                buildEighticon2(Icons.more_horiz, "Lihat Semua",
-                                    Colors.black),
+                                buildEighticon('images/plugin.png', "Mini Games", Colors.blue),
+                                buildEighticon('images/coupon.png', "Dana Deals", Colors.blue),
+                                buildEighticon('images/lightning.png', "Listrik", Colors.blue),
+                                buildEighticon('images/application.png', "Semua", Colors.blue),
                               ],
                             ),
                           ),
@@ -453,15 +446,15 @@ class _MyDanaState extends State<MyDana> {
   }
 
 // ini buat yang ada 8 icon ituF
-  Widget buildEighticon(IconData icon, String label, Color color) {
+  Widget buildEighticon(String imagePath, String label, Color color) {
     return Column(
       children: [
         Container(
           margin: EdgeInsets.all(20),
-          child: Icon(
-            icon,
-            size: 25,
-            color: color,
+          child: Image.asset(
+            imagePath,
+            width: 30,
+            height: 30,
           ),
         ),
         Text(
@@ -471,13 +464,16 @@ class _MyDanaState extends State<MyDana> {
       ],
     );
   }
-
-  Widget buildEighticon2(IconData icon, String label, Color color) {
+  Widget buildEighticon2(String imagePath, String label, Color color) {
     return Column(
       children: [
         Container(
           margin: EdgeInsets.all(20),
-          child: Icon(icon, size: 25, color: color),
+          child: Image.asset(
+            imagePath,
+            width: 30,
+            height: 30,
+          ),
         ),
         Text(
           label,

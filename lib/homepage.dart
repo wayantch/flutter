@@ -4,6 +4,7 @@ import 'package:tampilan/dana.dart';
 import 'package:tampilan/latihanpage.dart';
 import 'package:tampilan/latihanpage2.dart';
 import 'package:tampilan/latihanpage3.dart';
+import 'package:tampilan/shope.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -124,6 +125,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
+                child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   Container(
@@ -169,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const MyDana(),
+                                  builder: (context) => const MyShopee(),
                                 ));
                               },
                               child: Text(
@@ -209,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       )),
                 ],
               ),
-            ),
+            )),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
