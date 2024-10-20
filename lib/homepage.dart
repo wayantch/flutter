@@ -29,15 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
         leading: Icon(Icons.menu, color: Colors.white),
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.person))
-        ],
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-
             ImageSlideshow(
               /// Width of the [ImageSlideshow].
               width: double.infinity,
@@ -83,61 +80,138 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            const Text(
-              'You have pushed the button this many times:',
+            Container(
+              padding: EdgeInsets.all(10),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const LatihanPage(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "Halaman Latihan",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const LatihanPage2(),
+                          ),
+                        );
+                      },
+                      child: const Text("Halaman Latihan 2"),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const Latihanpage3(),
+                          ),
+                        );
+                      },
+                      child: const Text("Halaman Latihan 3"),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const LatihanPage(),
-                  ),
-                );
-              },
-              child: const Text("Halaman Latihan"),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const LatihanPage2(),
-                  ),
-                );
-              },
-              child: const Text("Halaman Latihan 2"),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Latihanpage3(),
-                  ),
-                );
-              },
-              child: const Text("Halaman Latihan 3"),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => MyDana(),
-                  ),
-                );
-              },
-              child: const Text("Halaman Dana"),
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                      margin: EdgeInsets.all(10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        // height: 100,
+                        // width: 100,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const MyDana(),
+                                ));
+                              },
+                              child: Text(
+                                "Halaman Dana",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
+                  Container(
+                      margin: EdgeInsets.all(10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        // height: 100,
+                        // width: 100,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const MyDana(),
+                                ));
+                              },
+                              child: Text(
+                                "Halaman Shoppe",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
+                  Container(
+                      margin: EdgeInsets.all(10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 255, 188, 89),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        // height: 100,
+                        // width: 100,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const MyDana(),
+                                ));
+                              },
+                              child: Text(
+                                "Halaman Shoppe Pay",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
+                ],
+              ),
             ),
           ],
         ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

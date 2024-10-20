@@ -214,7 +214,8 @@ class _Latihanpage3State extends State<Latihanpage3> {
                               ],
                             ),
                           )),
-                    MediaQuery.of(context).size.width < 1024 && MediaQuery.of(context).size.width > 600
+                    MediaQuery.of(context).size.width < 1024 &&
+                            MediaQuery.of(context).size.width > 600
                         ? SizedBox()
                         : Expanded(
                             child: Container(
