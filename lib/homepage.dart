@@ -4,7 +4,7 @@ import 'package:tampilan/dana.dart';
 import 'package:tampilan/latihanpage.dart';
 import 'package:tampilan/latihanpage2.dart';
 import 'package:tampilan/latihanpage3.dart';
-import 'package:tampilan/shope.dart';
+import 'package:tampilan/shopeePay.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const MyShopee(),
+                                  builder: (context) => const MyShopeePay(),
                                 ));
                               },
                               child: Text(

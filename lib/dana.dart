@@ -85,27 +85,19 @@ class _MyDanaState extends State<MyDana> {
           child: Column(
             children: [
               Container(
-                child: Container(
-                  color: Color.fromARGB(255, 21, 145, 247),
-                  height: 150,
-                  padding: EdgeInsets.all(30),
-                  child: Column(
-                    children: [
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            buildIconColumn(Icons.qr_code_scanner, "Pindai"),
-                            buildIconColumn(
-                                Icons.account_balance_wallet, "Isi Saldo"),
-                            buildIconColumn(Icons.send_sharp, "Kirim"),
-                            buildIconColumn(
-                                Icons.request_page_outlined, "Minta"),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                color: Color.fromARGB(255, 21, 145, 247),
+                height: 150,
+                padding: EdgeInsets.all(30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    buildIconColumn(Icons.qr_code_scanner, "Pindai"),
+                    buildIconColumn(
+                        Icons.account_balance_wallet, "Isi Saldo"),
+                    buildIconColumn(Icons.send_sharp, "Kirim"),
+                    buildIconColumn(
+                        Icons.request_page_outlined, "Minta"),
+                  ],
                 ),
               ),
               Container(
