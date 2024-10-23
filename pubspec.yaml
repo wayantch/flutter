@@ -40,6 +40,8 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^5.3.1
   flutter_image_slideshow: ^0.1.6
   fluid_bottom_nav_bar: ^1.4.0
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +83,9 @@ flutter:
     - images/totebag.png
     - images/wallet.png
     - images/dish.png
+    - images/letter-s.png
+    - images/smartphone.png
+    - images/accounts.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,7 +1,8 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:tampilan/ShopeePayPulsa.dart';
-import 'package:tampilan/main.dart';
+import 'package:tampilan/pages/semua.dart';
 
 class MyShopeePay extends StatefulWidget {
   const MyShopeePay({super.key});
@@ -47,7 +48,7 @@ class _MyShopeePayState extends State<MyShopeePay> {
             buildNavbarBottom(Icons.supervised_user_circle, "Saya", () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => MyShopeePay()),
               );
             }),
           ],
@@ -101,8 +102,10 @@ class _MyShopeePayState extends State<MyShopeePay> {
                                     child: Column(
                                       // ignore: prefer_const_literals_to_create_immutables
                                       children: [
+                                        // ignore: prefer_const_constructors
                                         Text(
                                           'SPayLater',
+                                          // ignore: prefer_const_constructors
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
@@ -163,58 +166,74 @@ class _MyShopeePayState extends State<MyShopeePay> {
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(10),
-                child: Container(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      boxShadow: [
-                        BoxShadow(color: Colors.black.withOpacity(0.5))
-                      ],
-                    ),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(  
+                    padding: EdgeInsets.all(10),
                     child: Container(
-                      padding: EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                buildEighticon('images/phone-call.png',
-                                    "Pulsa & Data",  () {
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyShopeePayPulsa(),));
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          boxShadow: [
+                            BoxShadow(color: Colors.black.withOpacity(0.5))
+                          ],
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    buildEighticon(
+                                        'images/phone-call.png', "Pulsa & Data",
+                                        () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const MyShopeePayPulsa()));
                                     }),
-                                buildEighticon('images/smartphone.png',
-                                    "Pulsa",  () {}),
-                                buildEighticon('images/letter-s.png', "SPayLater",
-                                     () {}),
-                                buildEighticon('images/joystick.png',
-                                    "SEA Bank",  () {}),
-                              ],
-                            ),
+                                    buildEighticon('images/smartphone.png',
+                                        "Pulsa", () {}),
+                                    buildEighticon('images/letter-s.png',
+                                        "SPayLater", () {}),
+                                    buildEighticon('images/joystick.png',
+                                        "SEA Bank", () {}),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [ 
+                                    buildEighticon(
+                                        'images/dish.png', "ShopeeFood", () {}),
+                                    buildEighticon('images/accounts.png',
+                                        "Virtual Akun", () {}),
+                                    buildEighticon('images/google-play.png',
+                                        "Google Play", () {}),
+                                    buildEighticon(
+                                        'images/application.png', "Semua", () {
+                                      Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                        builder: (context) => const MySemua(),
+                                      ));
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                buildEighticon('images/dish.png',
-                                    "ShopeeFood",  () {}),
-                                buildEighticon('images/accounts.png',
-                                    "Virtual Akun",  () {}),
-                                buildEighticon('images/google-play.png',
-                                    "Google Play",  () {}),
-                                buildEighticon('images/application.png',
-                                    "Semua",  () {}),
-                              ],
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
               Container(
                 padding: EdgeInsets.all(10),
@@ -231,8 +250,10 @@ class _MyShopeePayState extends State<MyShopeePay> {
                           Row(
                             children: [
                               Icon(Icons.abc),
-                          Text(
-                              'Upgrade Shopee Pay plus', style: TextStyle(fontSize: 12),),
+                              Text(
+                                'Upgrade Shopee Pay plus',
+                                style: TextStyle(fontSize: 12),
+                              ),
                             ],
                           ),
                           Container(
@@ -308,8 +329,7 @@ class _MyShopeePayState extends State<MyShopeePay> {
         ));
   }
 
-  Widget buildEighticon(
-      String imagePath, String label, VoidCallback onTap) {
+  Widget buildEighticon(String imagePath, String label, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Column(
